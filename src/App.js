@@ -1,11 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import CreateAccount from "./Pages/Create account/Createaccount";
+import SignUp from "./Pages/SignUp/signUp";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      hello 
-      I am Aparna sahu
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/Createaccount" element={<CreateAccount />} />
+          <Route path="/Createaccount/signUP" element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
+
+      {/* <Data/> */}
+      {/* <CreateAccount/> */}
+      {/* <SignUp /> */}
     </div>
   );
 }

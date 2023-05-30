@@ -1,0 +1,164 @@
+    .CreateAccount {
+        border: 2px solid black;
+        height: 85vh;
+        max-width: 40vw;
+        margin-right: 20%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 4%;
+        border-radius: 20px;
+        background-color: white;
+        padding: 10px;
+        position: relative;
+
+        flex-direction: column;
+        justify-content: baseline;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        overflow-y: scroll;
+    }
+
+    body {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .inname {
+        margin-top: 20px;
+    }
+
+    .inputname {
+
+        padding: 20px;
+        width: 60%;
+        outline-style: none;
+        font-size: inherit;
+
+        outline: none;
+
+    }
+
+
+
+    .inemail {
+        margin-top: 20px;
+        position: relative;
+    }
+
+    .inputemail {
+        width: 60%;
+      
+        padding: 20px;
+        outline: none;
+        outline-style: none;
+        color: black;
+
+        font-size: inherit;
+    }
+
+
+    .inphone {
+        margin-top: 20px;
+
+    }
+    .HiX{
+        position: absolute;
+        left: 10px;
+    }
+
+
+
+
+    .inputphone {
+        width: 60%;
+        margin: 10px;
+        padding: 20px;
+        width: 60%;
+        outline-style: none;
+        font-size: inherit;
+        outline: none;
+       
+
+    }
+
+    .btn {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        bottom: 0px;
+        left: 30%;
+        right: auto;
+        padding: 20px;
+        height: 50px;
+        width: 40%;
+        text-align: center;
+        border-radius: 10px;
+        position: sticky;
+
+    }
+
+    .Date {
+        width: 60%;
+        height: 50px;
+        margin: 10px;
+        
+        box-shadow: 0 0 8px 0 dodgerblue;
+        transition: .3s;
+        font-size: 30px;
+        outline: none;
+    }
+
+    .Date_content {
+
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: flex-end;
+        width: 80%;
+        margin-left: auto;
+    }
+
+    .Date_content h3 {
+        font-size: 30px;
+        width: fit-content;
+    }
+
+    .Date_content p {
+
+        width: 80%;
+        font-size: 20px;
+        text-align: start;
+    }
+
+    /* .btn:disabled{
+        padding: 10px 20px ;
+        font-size: 10px;
+    }
+    .btn:enabled{
+        background-color: royalblue;
+        color: aliceblue;
+        border-radius: 20px;
+        padding: 10px 20px;
+        font-size: 18px;
+    } */
+
+
+
+    input[type=text]:focus {
+        border-color: dodgerblue;
+        box-shadow: 0 0 8px 0 dodgerblue;
+        transition: .3s;
+    }
+
+    .CreateAccount h1 {
+
+        width: 65%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: start;
+        font-size: 40px;
+        margin-top: 20px;
+    }
+
+    .indate {
+        margin: 20px;
+    }
