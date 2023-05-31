@@ -17,6 +17,7 @@ export default function CreateAccount() {
     phone: "",
     email: "",
     dob: "",
+    password:""
   });
 
   const [errors, setErrors] = useState({});
@@ -45,6 +46,9 @@ export default function CreateAccount() {
 
     if (!form.dob) {
       errors.dob = "Date of Birth is required.";
+    }
+    if (!form.password.trim()) {
+      errors.dob = "Password is required ";
     }
 
     return errors;
@@ -81,6 +85,14 @@ export default function CreateAccount() {
                 type="text"
                 placeholder="Name"
                 name="name"
+                value={form.name}
+                onChange={changeHandler}
+              />
+              <input
+                className={Styles.input}
+                type="password"
+                placeholder="password"
+                name="password"
                 value={form.name}
                 onChange={changeHandler}
               />
