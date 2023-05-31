@@ -1,17 +1,25 @@
 import "./Create.module.css"
 import React, { useState } from "react";
 import Styles from "./Create.module.css";
-import TextField from "@mui/material/TextField";
+// import {useDispatch} from "react-redux"
+// import TextField from "@mui/material/TextField";
 import { HiX } from "react-icons/hi";
-import { Link } from "react-router-dom";
-import SignUp from "../SignUp/signUp";
+import { updateLoginStatus } from "./loginStatusSlice";
+// import { Link } from "react-router-dom";
+// import SignUp from "../SignUp/signUp";
+
 export default function CreateAccount() {
+
+  // const dispatch = useDispatch()
+
   const [form, setForm] = useState({
     name: "",
     phone: "",
     email: "",
     dob: "",
   });
+
+  const [errors, setErrors] = useState({});
 
   const newdata = localStorage.getItem("form")
     ? JSON.parse(localStorage.getItem("form"))
@@ -21,7 +29,7 @@ export default function CreateAccount() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const [errors, setErrors] = useState({});
+  
   const validateForm = () => {
     const errors = {};
 
@@ -54,6 +62,8 @@ export default function CreateAccount() {
     } else {
       setErrors(validationErrors);
     }
+
+    // dispatch(updateLoginStatus(true));
   };
 
   return (
@@ -67,7 +77,7 @@ export default function CreateAccount() {
           <div className={Styles.inname}>
             <label>
               <input
-                className={Styles.inputname}
+                className={Styles.input}
                 type="text"
                 placeholder="Name"
                 name="name"
@@ -87,11 +97,10 @@ export default function CreateAccount() {
               {errors.name}
             </label>
           </div>
-          <br />
           <div className={Styles.inphone}>
             <label>
               <input
-                className={Styles.inputphone}
+                className={Styles.input}
                 type="text"
                 placeholder="Phone"
                 name="phone"
@@ -112,7 +121,6 @@ export default function CreateAccount() {
               {errors.phone}
             </label>
           </div>
-          <br />
           <div className={Styles.inemail}>
             <label className={Styles.emaillabel}>
               <input
@@ -121,7 +129,7 @@ export default function CreateAccount() {
                 name="email"
                 value={form.email}
                 onChange={changeHandler}
-                className={Styles.inputemail}
+                className={Styles.input}
               />
               {/* <TextField
                 className={Styles.inputemail}
@@ -136,11 +144,8 @@ export default function CreateAccount() {
             </label>
           </div>
 
-          <br />
-
           <div className={Styles.Date_content}>
             <h3>Date of birth</h3>
-            <br />
             <p>
               This will not be shown publicly. Confirm your own age, even if
               this account is for a business, a pet, or something else.
@@ -163,13 +168,14 @@ export default function CreateAccount() {
               {errors.dob}
             </label>
           </div>
-          <br />
 
-          <Link to ='signUP/'>
+          {/* <Link to ='signUP/'> */}
+          <div className={Styles.btnbox}>
           <button className={Styles.btn} type="submit">
             Next
           </button>
-          </Link>
+          </div>
+          {/* </Link> */}
         </form>
       </div>
     </>
