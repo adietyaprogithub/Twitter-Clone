@@ -1,23 +1,17 @@
-import "./Create.module.css"
+import "./Create.module.css";
 import React, { useState } from "react";
 import Styles from "./Create.module.css";
-// import {useDispatch} from "react-redux"
-// import TextField from "@mui/material/TextField";
 import { HiX } from "react-icons/hi";
 import { updateLoginStatus } from "./loginStatusSlice";
-// import { Link } from "react-router-dom";
-// import SignUp from "../SignUp/signUp";
 
 export default function CreateAccount() {
-
-  // const dispatch = useDispatch()
-
   const [form, setForm] = useState({
     name: "",
     phone: "",
     email: "",
     dob: "",
-    password:""
+    password: "",
+    islogin: false,
   });
 
   const [errors, setErrors] = useState({});
@@ -30,7 +24,6 @@ export default function CreateAccount() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  
   const validateForm = () => {
     const errors = {};
 
@@ -63,11 +56,10 @@ export default function CreateAccount() {
       localStorage.setItem("form", JSON.stringify([...newdata, form]));
       console.log(form);
       setErrors({});
+      window.alert("Data stored successfully!");
     } else {
       setErrors(validationErrors);
     }
-     
-    // dispatch(updateLoginStatus(true));
   };
 
   return (
@@ -93,7 +85,7 @@ export default function CreateAccount() {
                 type="password"
                 placeholder="password"
                 name="password"
-                value={form.name}
+                value={form.password}
                 onChange={changeHandler}
               />
               {/* <TextField
@@ -120,7 +112,7 @@ export default function CreateAccount() {
                 onChange={changeHandler}
                 required
               />
-              
+
               {errors.phone}
             </label>
           </div>
@@ -134,7 +126,7 @@ export default function CreateAccount() {
                 onChange={changeHandler}
                 className={Styles.input}
               />
-             
+
               {errors.email}
             </label>
           </div>
@@ -163,9 +155,9 @@ export default function CreateAccount() {
 
           {/* <Link to ='signUP/'> */}
           <div className={Styles.btnbox}>
-          <button className={Styles.btn} type="submit">
-            Next
-          </button>
+            <button className={Styles.btn} type="submit">
+              Next
+            </button>
           </div>
           {/* </Link> */}
         </form>

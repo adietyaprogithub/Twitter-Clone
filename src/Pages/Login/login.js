@@ -7,27 +7,27 @@ import { Link, useNavigate } from "react-router-dom";
 
 export function Login() {
   const [userName, setUsername] = React.useState("");
+  const [password, setPassword] = React.useState(""); // Add password state
   const formData = JSON.parse(localStorage.getItem("form"));
 
   const navigate = useNavigate();
 
   const handleClick = () => {
-    const values = formData.find(
+    const user = formData.find(
       (element) =>
-        element.name === userName ||
-        element.email === userName ||
-        element.phone === userName
+        (element.email === userName || element.phone === userName) &&
+        element.password === password
     );
-
-    if (values) {
+  
+    if (user) {
       localStorage.setItem("login", true);
-      localStorage.setItem("loggedInUser", JSON.stringify(values));  // srore the data of the user 
-      navigate("/Home");
+      localStorage.setItem("loggedInUser", JSON.stringify(user));
+      navigate("/home");
     } else {
-      alert("plese Enter Correct Info");
+      alert("Incorrect username or password");
     }
   };
-
+  
   return (
     <div className="login-container">
       <span className="icon">
@@ -53,7 +53,16 @@ export function Login() {
           setUsername(e.target.value);
         }}
         type="text"
-        placeholder="Phone, email, or username"
+        placeholder=" Phone or email "
+      />
+
+      {/* Add password input field */}
+      <input
+        onChange={(e) => {
+          setPassword(e.target.value);
+        }}
+        type="password"
+        placeholder="Password"
       />
 
       <button className="next-btn" onClick={handleClick}>

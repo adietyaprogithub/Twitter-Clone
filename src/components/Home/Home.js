@@ -23,6 +23,8 @@ function Home() {
   const [feed, setFeed] = useState(feedData.feed);
   const [newTweet, setNewTweet] = useState("");
 
+
+ 
   const increaseCounter = (id) => {
     const updatedFeed = feed.map((item) => {
       if (item.id === id) {
@@ -58,8 +60,8 @@ function Home() {
     }
   };
 
-  return (
-    <div className="home">
+  return (       
+    <div className="home">                                  //input field
       <div>
         <div className="header">
           <div className="row-between1">
@@ -116,6 +118,7 @@ function Home() {
           ))}
         </div>
       </div>
+      
     </div>
   );
 }
