@@ -1,29 +1,33 @@
 import React from "react";
-
 import "./login.css";
-
 import { BsTwitter } from "react-icons/bs";
-
 import { FcGoogle } from "react-icons/fc";
-
 import { BsApple } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 
 export function Login() {
   const [userName, setUsername] = React.useState("");
   const formData = JSON.parse(localStorage.getItem("form"));
-  const  navigate= useNavigate()
+
+  const navigate = useNavigate();
 
   const handleClick = () => {
-      formData.forEach(element => {
-            if(element.name === userName || element.email === userName || element.phone === userName){
-                localStorage.setItem("login",true)
-                navigate("/Home")
-            } else{
-                    navigate("/Createaccount")
-            }   
-    });
+    const values = formData.find(
+      (element) =>
+        element.name === userName ||
+        element.email === userName ||
+        element.phone === userName
+    );
+
+    if (values) {
+      localStorage.setItem("login", true);
+      localStorage.setItem("loggedInUser", JSON.stringify(values));  // srore the data of the user 
+      navigate("/Home");
+    } else {
+      alert("plese Enter Correct Info");
+    }
   };
+
   return (
     <div className="login-container">
       <span className="icon">
@@ -49,20 +53,16 @@ export function Login() {
           setUsername(e.target.value);
         }}
         type="text"
-        placeholder="Phone, email,or username"
+        placeholder="Phone, email, or username"
       />
 
-      <Link to="/login">
-        {" "}
-        <button className="next-btn" onClick={handleClick}>Next</button>
-      </Link>
+      <button className="next-btn" onClick={handleClick}>
+        Next
+      </button>
 
       <button className="forgot-btn">Forgot password?</button>
       <p>
-        Don't have an account?{" "}
-        <Link to="/signUP" >
-          Sign up
-        </Link>
+        Don't have an account? <Link to="/signUP">Sign up</Link>
       </p>
     </div>
   );
