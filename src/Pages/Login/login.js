@@ -1,42 +1,69 @@
-import React from 'react'
+import React from "react";
+import "./login.css";
+import { BsTwitter } from "react-icons/bs";
+import { FcGoogle } from "react-icons/fc";
+import { BsApple } from "react-icons/bs";
+import { Link, useNavigate } from "react-router-dom";
 
-import './login.css'
+export function Login() {
+  const [userName, setUsername] = React.useState("");
+  const formData = JSON.parse(localStorage.getItem("form"));
 
-import { BsTwitter } from 'react-icons/bs';
+  const navigate = useNavigate();
 
-import { FcGoogle } from 'react-icons/fc';
+  const handleClick = () => {
+    const values = formData.find(
+      (element) =>
+        element.name === userName ||
+        element.email === userName ||
+        element.phone === userName
+    );
 
-import { BsApple } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+    if (values) {
+      localStorage.setItem("login", true);
+      localStorage.setItem("loggedInUser", JSON.stringify(values));  // srore the data of the user 
+      navigate("/Home");
+    } else {
+      alert("plese Enter Correct Info");
+    }
+  };
 
-export function Login(){
+  return (
+    <div className="login-container">
+      <span className="icon">
+        <BsTwitter />
+      </span>
 
-    return(
+      <h1>Sign in to Twitter</h1>
 
-        <div className='login-container'>
+      <button className="google-btn">
+        <FcGoogle />
+        Sign in with Google
+      </button>
 
-            <span className='icon'><BsTwitter/></span>
+      <button className="apple-btn">
+        <BsApple />
+        Sign in with Apple
+      </button>
 
-            <h1>Sign in to Twitter</h1>
+      <h3>or</h3>
 
-            <button className='google-btn'><FcGoogle/>Sign in with Google</button>
+      <input
+        onChange={(e) => {
+          setUsername(e.target.value);
+        }}
+        type="text"
+        placeholder="Phone, email, or username"
+      />
 
-            <button className='apple-btn'><BsApple/>Sign in with Apple</button>
+      <button className="next-btn" onClick={handleClick}>
+        Next
+      </button>
 
-            {/* <br /> */}
-            
-            <h3>or</h3>
-
-            <input type="text" placeholder='Phone, email,or username' />
-
-           <Link to="/login"> <button className='next-btn'>Next</button></Link>
-
-            <button className='forgot-btn'>Forgot password?</button>
-
-            <h3>Don't have an account? <Link to="/signUP">Sign up</Link></h3>
-
-        </div>
-
-    )
-
+      <button className="forgot-btn">Forgot password?</button>
+      <p>
+        Don't have an account? <Link to="/signUP">Sign up</Link>
+      </p>
+    </div>
+  );
 }

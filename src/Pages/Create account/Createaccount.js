@@ -17,7 +17,8 @@ export default function CreateAccount() {
     phone: "",
     email: "",
     dob: "",
-    password:""
+    password:"",
+    islogin : false              
   });
 
   const [errors, setErrors] = useState({});
@@ -93,7 +94,7 @@ export default function CreateAccount() {
                 type="password"
                 placeholder="password"
                 name="password"
-                value={form.name}
+                value={form.password}
                 onChange={changeHandler}
               />
               {/* <TextField

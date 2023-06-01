@@ -21,6 +21,9 @@ function Home() {
   const [feed, setFeed] = useState(feedData.feed);
   const [newTweet, setNewTweet] = useState("");
 
+
+  const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));   // we recive the data from the login 
+
   const increaseCounter = (id) => {
     const updatedFeed = feed.map((item) => {
       if (item.id === id) {
@@ -56,12 +59,13 @@ function Home() {
     }
   };
 
-  return (
-    <div className="home">
+  return (       
+    <div className="home">                                  //input field
       <div>
         <div className="header">
           <div className="row-between">
             <h4>Home</h4>
+            <p>Email: {loggedInUser.email}</p>               //showing the data 
             <AutoAwesomeOutlined className="headerIcon" />
           </div>
           <div className="headerCreate">
@@ -113,6 +117,7 @@ function Home() {
           ))}
         </div>
       </div>
+      
     </div>
   );
 }
