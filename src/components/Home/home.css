@@ -1,19 +1,27 @@
+body{
+  background-color: white;
+}
 .home {
     display: flex;
-    border-left: 1px solid #181818;
+    /* border: 2px solid red; */
+    border: 1px solid lightgray;
+    width: 40em;
+    margin: 0 auto;
   }
   
   .header {
-    border-right: 1px solid #181818;
-    color: #fff;
+    /* background-color: white; */
+    /* border-right: 1px solid #181818; */
+    /* color: #fff; */
     padding: 20px;
     width: 600px;
-    border-bottom: 1px solid #181818;
+    border: 1px solid lightgray;
+    /* border-bottom: 1px solid #181818; */
   }
   
-  .header > .row-between {
+  .header > .row-between1 {
     height: 60px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(253, 251, 251, 0.5);
     margin-left: -20px;
     backdrop-filter: blur(10px);
     z-index: 100;
@@ -23,16 +31,19 @@
     width: 600px;
     position: fixed;
     top: 0;
+    border: 0.1px solid lightgray;
   }
   
   .header > .row-between > h4 {
     font-size: 1.2rem;
     font-weight: bolder;
-    color: #d6d9db;
+    /* color: #d6d9db; */
+    color: #000000;
   }
   
   .headerIcon {
-    color: #ffffff;
+    /* color: #ffffff; */
+    color: #000000;
     width: 35px;
     height: 35px;
     padding: 6px;
@@ -41,40 +52,56 @@
   }
   
   .headerIcon:hover {
-    background-color: #181919;
+    background-color:#dceffc ;
+    color: #88caf9;
+
   }
   
   .headerCreate {
-    margin-top: 30px;
+    margin-top: 15%;
     padding-top: 15px;
+    /* border: 2px solid green; */
   }
   
   .headerCreateInput {
+    /* border: 1px solid red; */
     resize: none;
     width: 100%;
-    height: 70px;
+    height: 75px;
     margin-bottom: 10px;
     border: none;
     font-size: large;
     border-radius: 5px;
     padding: 13px;
-    background-color: #000000;
-    color: #fff;
+    background-color:#fff;
+    /* color: #fff; */
+    color: #000000;
     outline: none;
     border: 0;
   }
   
+  .row-between{
+    border: 1px solid lightgray;
+    text-align: center;
+    height: 10vh;
+    width: 100%;
+  }
   .headerCreateButton {
-    margin-top: -20px;
+    margin-top: -45px;
+    /* border: 2px solid yellowgreen; */
+    width: 30%;
+    height: 5vh;
+    margin-left: 70%;
+    text-align: center;
   }
   
   .headerCreateButton > button {
-    background-color: #1d9bf0;
+    background-color: #88caf9;
     color: #fff;
     border: none;
-    width: 80px;
+    width: 95px;
     border-radius: 20px;
-    padding: 5px;
+    padding: 10px;
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
@@ -87,11 +114,13 @@
   }
   
   .headerCreateIcons {
+    /* border: 2px solid yellow; */
     display: flex;
     justify-content: space-between;
-    width: 30%;
-    margin-top: -20px;
+    width: 50%;
+    margin-top: 10px;
     margin-left: 20px;
+   
   }
   
   .headerCreateIcons > .MuiSvgIcon-root {
@@ -104,24 +133,35 @@
   }
   
   .headerCreateIcons > .MuiSvgIcon-root:hover {
-    background-color: #031018;
+    background-color: #d8e6ee;
   }
   
-  .feed {
-    border-right: 1px solid #181818;
-    width: 600px;
+
+  .Verified-tick{
+    margin-top: -10%;
+   /* border: 2px solid red; */
+   width: 80%;
+   margin-left: 30px;
+   margin-bottom: 10%;
+   color: gray;
+   
   }
+
+  /* .feed {
+    border: 2px solid blue;
+
+  } */
   
   .feedItem {
     padding-top: 20px;
     padding-left: 20px;
-    border-bottom: 1px solid #181818;
+    border-bottom: 1px solid lightgray;
     transition: 0.5s;
     cursor: pointer;
   }
   
   .feedItem:hover {
-    background-color: #080808;
+    background-color: #f0e9e9;
   }
   
   .feedItemInfo > h4 {
@@ -154,28 +194,99 @@
   }
   
   .feedItemContent {
-    margin-top: -25px;
-    margin-left: 60px;
+    /* margin-top: 20px; */
+    margin-left: 20px;
+    /* border: 2px solid green; */
+    height: 50vh;
+    width: 90%;
+  
   }
   
-  .feedItemContent > h4 {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #e7e9ea;
-    margin-bottom: 10px;
+  .Text-box{
+    /* border: 2px solid pink; */
+    width: 100%;
+
+  }
+  .Image-box{
+    margin-top: 5%;
+    width: 90%;
+    height: 40vh;
+    border-radius: 20px;
+  
   }
   
   .feedItemContent > h4 > img {
     width: 95%;
     margin-bottom: 10px;
-    height: 100%;
+    height: 50%;
     border-radius: 10px;
     margin-top: 10px;
   }
   
   .feedItemFooter {
+    /* border: 2px solid red; */
     margin-left: 60px;
     margin-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    color: gray;
+    
+  }
+  
+  /* 1 */
+  .Message-icon:hover{
+    color: #1d9bf0;
+    /* background-color:#c2dbeb ; */
+    
+  }
+  .M-I:hover{
+    background-color:#c2dbeb ;
+    border-radius: 50px;
+    /* padding: 2px; */
+  }
+
+  /* 2 */
+
+  .Load-icon:hover{
+    color: #00b075;
+    /* background-color:#c2dbeb ; */
+    
+  }
+  .L-I:hover{
+    background-color:#a9edd7 ;
+    border-radius: 50px;
+  }
+/* 3 */
+  .Hart-icon:hover{
+    color: red;
+    /* background-color:#c2dbeb ; */
+    
+  }
+  .H-I:hover{
+    background-color:rgb(240, 162, 162) ;
+    border-radius: 50px;
+  }
+  /* 4 */
+
+  .Rating-icon:hover{
+    color: #1d9bf0;
+    
+  }
+  /* 5 */
+  .R-I:hover{
+    background-color:#c2dbeb ;
+    border-radius: 50px;
+  }
+
+  /* .Five-icon:hover{
+    color: #1d9bf0;
+    
+  } */
+  /* 5 */
+  .F-I:hover{
+    background-color:#c2dbeb ;
+    border-radius: 50px;
   }
   
   .feedItemIcons {
@@ -202,7 +313,7 @@
   
   /* Diff Icons Diff Colors */
   
-  .feedItemFooter > .row-between > .View:hover > .MuiSvgIcon-root {
+  /* .feedItemFooter > .row-between > .View:hover > .MuiSvgIcon-root {
     color: #1d9bf0;
     background-color: #0a171f;
   }
@@ -351,4 +462,4 @@
   
   .trendsFooter:hover {
     background-color: #1d1f23;
-  }
+  } */
