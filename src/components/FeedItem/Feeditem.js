@@ -19,63 +19,68 @@ function FeedItem(props) {
 
   return (
     <div className="feedItem w-100" onClick={increaseCounter}>
-      <div className="row-between">
+      <div >
         <div className="row-nospace">
           <Avatar sx={{ width: 50, height: 50 }} src={props.avatarurl} />
           <div
             className="feedItemInfo row-nospace mt-1"
             style={{ width: "70%", marginLeft: 10 }}
           >
-            <h4>
-              {props.name}{" "}
-              {props.verified === true ? (
-                <VerifiedRounded
+            <div className="Verified-tick">
+
+           {props.name}{" "}
+           <VerifiedRounded
                   sx={{
                     color: "#1DA1F2",
                     fontSize: 15,
                     marginTop: "-5px",
                   }}
                 />
-              ) : (
-                <div></div>
-              )}
-            </h4>
-            <p>@{props.name}</p>
-            <p style={{ fontWeight: "bolder" }}> · </p>
-            <p>{props.time}</p>
+                @{props.name}.{props.time}
+               
+            </div>
           </div>
         </div>
-        <MoreHorizOutlined className="feedMoreIcon" />
+        {/* <MoreHorizOutlined className="feedMoreIcon" /> */}
       </div>
-      <div className="feedItemContent">
-        <h4>
+      {/* 0000000000000000000000000000000000000000000000 */}
+      {/* Contents with images */}
+      <div className="Text-box">
           {props.text}
-          <br />
-          {props.image === "" ? <div></div> : <img src={props.image} />}
-        </h4>
+          </div>
+      <div className="feedItemContent">
+        {/* <div className="Text-box">
+          {props.text}
+          </div> */}
+          <img className="Image-box" src={props.image} />
       </div>
+
       <div className="feedItemFooter">
-        <div className="row-between">
-          <div className="feedItemIcons row-nospace View">
-            <BarChartRounded />
-            <p>{props.view}</p>
-          </div>
-          <div className="feedItemIcons row-nospace Reply">
-            <ChatOutlined />
-            <p>{props.comment}</p>
-          </div>
-          <div className="feedItemIcons row-nospace ReTweet">
-            <LoopOutlined />
-            <p>{props.retweet}</p>
-          </div>
-          <div className="feedItemIcons row-nospace Like">
-            <FavoriteBorderOutlined />
-            <p>{likeCount}</p>
-          </div>
-          <div className="feedItemIcons row-nospace Share">
-            <IosShareOutlined />
-          </div>
-        </div>
+
+        <p className="Message-icon">
+          <ChatOutlined className="M-I"/>
+          {props.comment}
+        </p>
+
+        <p className="Load-icon">
+          <LoopOutlined className="L-I" />
+          {props.retweet}
+        </p>
+
+    
+        <p className="Hart-icon">
+          <FavoriteBorderOutlined  className="H-I"/>
+          {likeCount}
+        </p>
+
+        <p className="Rating-icon">
+          <BarChartRounded className="R-I" />
+          {props.view}
+        </p>
+
+        <p className="Five-icon">
+          <IosShareOutlined className="F-I" />
+        </p>
       </div>
     </div>
   );

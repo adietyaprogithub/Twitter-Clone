@@ -66,7 +66,7 @@ export default function CreateAccount() {
     } else {
       setErrors(validationErrors);
     }
-
+     
     // dispatch(updateLoginStatus(true));
   };
 
@@ -120,16 +120,7 @@ export default function CreateAccount() {
                 onChange={changeHandler}
                 required
               />
-              {/* <TextField
-                className={Styles.inputphone}
-                id="outlined-basic"
-                type="text"
-                label="Phone"
-                variant="outlined"
-                value={form.phone}
-                onChange={changeHandler}
-                
-              /> */}
+              
               {errors.phone}
             </label>
           </div>
@@ -143,15 +134,7 @@ export default function CreateAccount() {
                 onChange={changeHandler}
                 className={Styles.input}
               />
-              {/* <TextField
-                className={Styles.inputemail}
-                id="outlined-basic"
-                label="Email"
-                variant="outlined"
-                value={form.email}
-                onChange={changeHandler}
-                required
-              /> */}
+             
               {errors.email}
             </label>
           </div>
@@ -174,9 +157,6 @@ export default function CreateAccount() {
                 className={Styles.Date}
               />
 
-              {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <DatePicker label='select-date' value={date} onChange={(newValue)=>setvalue(newValue)} renderinput={(props)=><TextField {...props}/>}/>
-          </LocalizationProvider> */}
               {errors.dob}
             </label>
           </div>

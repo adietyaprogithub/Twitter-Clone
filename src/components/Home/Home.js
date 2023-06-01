@@ -18,6 +18,8 @@ import FeedItem from "../FeedItem/Feeditem";
 import TrendItem from "../TrendItoms/Trenditom";
 
 function Home() {
+
+  const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));   // we recive the data from the login
   const [feed, setFeed] = useState(feedData.feed);
   const [newTweet, setNewTweet] = useState("");
 
@@ -60,17 +62,18 @@ function Home() {
     <div className="home">
       <div>
         <div className="header">
-          <div className="row-between">
+          <div className="row-between1">
             <h4>Home</h4>
+            <p>Email: {loggedInUser.email}</p>
             <AutoAwesomeOutlined className="headerIcon" />
           </div>
           <div className="headerCreate">
             <div className="row-nospace">
               <Avatar
-                sx={{ width: 50, height: 50 }}
+                sx={{ width: 50, height: 50 , border:"1px solid  lightgray" }}
                 src="https://yt3.ggpht.com/jdzNjnfkJayS5QpVHzluOt4EjGlvajabT3IOFYY8mSaCiQf5QYDLMQlv72qmuX1hlVQguLckew=s176-c-k-c0x00ffffff-no-rj-mo"
               />
-              <div style={{ width: "80%", height: "30%" }}>
+              <div style={{ width: "96%", height: "50%", }}>
                 <textarea
                   className="headerCreateInput"
                   placeholder="What's happening?"
