@@ -4,27 +4,29 @@ import { BsTwitter } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
+import { authAtom } from "../../atom";
 
 export function Login() {
   const [userName, setUsername] = React.useState("");
+  const [password, setPassword] = React.useState("");
   const formData = JSON.parse(localStorage.getItem("form"));
-
+  const setAuth = useSetRecoilState(authAtom);
   const navigate = useNavigate();
 
   const handleClick = () => {
-    const values = formData.find(
+    const user = formData.find(
       (element) =>
-        element.name === userName ||
-        element.email === userName ||
-        element.phone === userName
+        (element.email === userName ) &&
+        element.password === password
     );
 
-    if (values) {
-      localStorage.setItem("login", true);
-      localStorage.setItem("loggedInUser", JSON.stringify(values));  // srore the data of the user 
-      navigate("/Home");
+    if (user) {
+      localStorage.setItem("loggedInUser", JSON.stringify(user));
+      setAuth({ isAuthenticated: true });
+      navigate("/home");
     } else {
-      alert("plese Enter Correct Info");
+      alert("Incorrect username or password");
     }
   };
 
@@ -54,7 +56,16 @@ export function Login() {
           setUsername(e.target.value);
         }}
         type="text"
-        placeholder="Phone, email, or username"
+        placeholder=" Enter Your email "
+      />
+
+      {/* Add password input field */}
+      <input
+        onChange={(e) => {
+          setPassword(e.target.value);
+        }}
+        type="password"
+        placeholder="Password"
       />
    <div>
       <button className={Styles.next_btn} onClick={handleClick}>

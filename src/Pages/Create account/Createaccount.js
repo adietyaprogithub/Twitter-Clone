@@ -1,23 +1,22 @@
-import "./Create.module.css"
 import React, { useState } from "react";
 import Styles from "./Create.module.css";
 import { HiX } from "react-icons/hi";
-// import { updateLoginStatus } from "./loginStatusSlice";
-
+import { useNavigate } from "react-router-dom";
+import { updateLoginStatus } from "./loginStatusSlice";
 
 export default function CreateAccount() {
-
-  // const dispatch = useDispatch()
-
   const [form, setForm] = useState({
     name: "",
     phone: "",
     email: "",
     dob: "",
-    password:""
+    password: "",
+    islogin: false,
   });
 
   const [errors, setErrors] = useState({});
+
+  const navigate = useNavigate();
 
   const newdata = localStorage.getItem("form")
     ? JSON.parse(localStorage.getItem("form"))
@@ -27,25 +26,26 @@ export default function CreateAccount() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  
   const validateForm = () => {
     const errors = {};
 
     if (!form.name.trim()) {
-      errors.name = "Name is required.";
+      errors.name = "";
     }
     if (!form.phone.trim()) {
-      errors.phone = "Phone is required.";
+      errors.phone = "";
     }
     if (!form.email.trim()) {
-      errors.email = "Email is required.";
+      errors.email = "";
     }
 
     if (!form.dob) {
-      errors.dob = "Date of Birth is required.";
+      errors.dob = "";
     }
     if (!form.password.trim()) {
-      errors.dob = "Password is required ";
+      errors.password = "Password is required.";
+    } else if (form.password.length < 8) {
+      errors.password = "Password should be at least 8 characters long.";
     }
 
     return errors;
@@ -60,11 +60,11 @@ export default function CreateAccount() {
       localStorage.setItem("form", JSON.stringify([...newdata, form]));
       console.log(form);
       setErrors({});
+      window.alert("Data stored successfully!");
+      navigate("/login"); // Redirect to the login page after successful submission
     } else {
       setErrors(validationErrors);
     }
-     
-    // dispatch(updateLoginStatus(true));
   };
 
   return (
@@ -73,7 +73,7 @@ export default function CreateAccount() {
         <div className={Styles.HiX}>
           <HiX size={40} />
         </div>
-        <h1>Create your account</h1>
+        <h1>Create Your Account</h1>
         <form onSubmit={handleSubmit}>
           <div className={Styles.inname}>
             <label>
@@ -84,20 +84,26 @@ export default function CreateAccount() {
                 name="name"
                 value={form.name}
                 onChange={changeHandler}
+                required
               />
        
               {errors.name}
             </label>
+            </div>
             <div>
+            <label>
             <input
                 className={Styles.input}
                 type="password"
-                placeholder="password"
+                placeholder="Password"
                 name="password"
-                value={form.name}
+                value={form.password}
                 onChange={changeHandler}
+                required
               />
-              </div>
+              {errors.name}
+              {errors.password} {/* Display password errors */}
+            </label>
           </div>
           <div className={Styles.inphone}>
             <label>
@@ -110,7 +116,6 @@ export default function CreateAccount() {
                 onChange={changeHandler}
                 required
               />
-              
               {errors.phone}
             </label>
           </div>
@@ -123,8 +128,8 @@ export default function CreateAccount() {
                 value={form.email}
                 onChange={changeHandler}
                 className={Styles.input}
+                required
               />
-             
               {errors.email}
             </label>
           </div>
@@ -145,19 +150,17 @@ export default function CreateAccount() {
                 value={form.dob}
                 onChange={changeHandler}
                 className={Styles.Date}
+                required
               />
-
               {errors.dob}
             </label>
           </div>
 
-          {/* <Link to ='signUP/'> */}
           <div className={Styles.btnbox}>
-          <button className={Styles.btn} type="submit">
-            Next
-          </button>
+            <button className={Styles.btn} type="submit">
+              Next
+            </button>
           </div>
-          {/* </Link> */}
         </form>
       </div>
     </>
