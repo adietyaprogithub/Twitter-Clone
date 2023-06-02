@@ -30,17 +30,17 @@ export default function CreateAccount() {
     const errors = {};
 
     if (!form.name.trim()) {
-      errors.name = "Name is required.";
+      errors.name = "";
     }
     if (!form.phone.trim()) {
-      errors.phone = "Phone is required.";
+      errors.phone = "";
     }
     if (!form.email.trim()) {
-      errors.email = "Email is required.";
+      errors.email = "";
     }
 
     if (!form.dob) {
-      errors.dob = "Date of Birth is required.";
+      errors.dob = "";
     }
     if (!form.password.trim()) {
       errors.password = "Password is required.";
@@ -84,6 +84,7 @@ export default function CreateAccount() {
                 name="name"
                 value={form.name}
                 onChange={changeHandler}
+                required
               />
               <input
                 className={Styles.input}
@@ -92,6 +93,7 @@ export default function CreateAccount() {
                 name="password"
                 value={form.password}
                 onChange={changeHandler}
+                required
               />
               {errors.name}
               {errors.password} {/* Display password errors */}
@@ -120,6 +122,7 @@ export default function CreateAccount() {
                 value={form.email}
                 onChange={changeHandler}
                 className={Styles.input}
+                required
               />
               {errors.email}
             </label>
@@ -141,6 +144,7 @@ export default function CreateAccount() {
                 value={form.dob}
                 onChange={changeHandler}
                 className={Styles.Date}
+                required
               />
               {errors.dob}
             </label>

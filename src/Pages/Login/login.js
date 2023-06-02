@@ -17,7 +17,7 @@ export function Login() {
   const handleClick = () => {
     const user = formData.find(
       (element) =>
-        (element.email === userName || element.phone === userName) &&
+        (element.email === userName ) &&
         element.password === password
     );
 
@@ -55,7 +55,7 @@ export function Login() {
           setUsername(e.target.value);
         }}
         type="text"
-        placeholder=" Phone or email "
+        placeholder=" Enter Your email "
       />
 
       {/* Add password input field */}
