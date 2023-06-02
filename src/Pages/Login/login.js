@@ -1,5 +1,5 @@
 import React from "react";
-import "./login.css";
+import Styles from "./login.module.css";
 import { BsTwitter } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
@@ -29,19 +29,19 @@ export function Login() {
   };
 
   return (
-    <div className="login-container">
-      <span className="icon">
+    <div className={Styles.login_container}>
+      <span className={Styles.icon}>
         <BsTwitter />
       </span>
 
-      <h1>Sign in to Twitter</h1>
+      <h1 className={Styles.header}>Sign in to Twitter</h1>
 
-      <button className="google-btn">
+      <button className={Styles.google_btn}>
         <FcGoogle />
         Sign in with Google
       </button>
 
-      <button className="apple-btn">
+      <button className={Styles.apple_btn}>
         <BsApple />
         Sign in with Apple
       </button>
@@ -49,18 +49,21 @@ export function Login() {
       <h3>or</h3>
 
       <input
+      className={Styles.input}
         onChange={(e) => {
           setUsername(e.target.value);
         }}
         type="text"
         placeholder="Phone, email, or username"
       />
-
-      <button className="next-btn" onClick={handleClick}>
+   <div>
+      <button className={Styles.next_btn} onClick={handleClick}>
         Next
       </button>
-
-      <button className="forgot-btn">Forgot password?</button>
+      </div>
+      <div>
+      <button className={Styles.forgot_btn}>Forgot password?</button>
+      </div>
       <p>
         Don't have an account? <Link to="/signUP">Sign up</Link>
       </p>

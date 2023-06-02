@@ -1,12 +1,9 @@
 import "./Create.module.css"
 import React, { useState } from "react";
 import Styles from "./Create.module.css";
-// import {useDispatch} from "react-redux"
-// import TextField from "@mui/material/TextField";
 import { HiX } from "react-icons/hi";
-import { updateLoginStatus } from "./loginStatusSlice";
-// import { Link } from "react-router-dom";
-// import SignUp from "../SignUp/signUp";
+// import { updateLoginStatus } from "./loginStatusSlice";
+
 
 export default function CreateAccount() {
 
@@ -76,7 +73,7 @@ export default function CreateAccount() {
         <div className={Styles.HiX}>
           <HiX size={40} />
         </div>
-        <h1>Create Yourrr Account</h1>
+        <h1>Create your account</h1>
         <form onSubmit={handleSubmit}>
           <div className={Styles.inname}>
             <label>
@@ -88,7 +85,11 @@ export default function CreateAccount() {
                 value={form.name}
                 onChange={changeHandler}
               />
-              <input
+       
+              {errors.name}
+            </label>
+            <div>
+            <input
                 className={Styles.input}
                 type="password"
                 placeholder="password"
@@ -96,18 +97,7 @@ export default function CreateAccount() {
                 value={form.name}
                 onChange={changeHandler}
               />
-              {/* <TextField
-                
-                id="outlined-basic"
-                label="name"
-                variant="outlined"
-                value={form.name}
-                required
-                size="larger"
-                onChange={changeHandler}
-              /> */}
-              {errors.name}
-            </label>
+              </div>
           </div>
           <div className={Styles.inphone}>
             <label>

@@ -64,7 +64,7 @@ function Home() {
         <div className="header">
           <div className="row-between1">
             <h4>Home</h4>
-            <p>Email: {loggedInUser.email}</p>
+            {/* <p>Email: {loggedInUser.email}</p> */}
             <AutoAwesomeOutlined className="headerIcon" />
           </div>
           <div className="headerCreate">

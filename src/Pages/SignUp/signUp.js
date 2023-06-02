@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import './signUp.css';
+import Styles from './signUp.module.css';
 import { BsTwitter } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
 import { BsApple } from 'react-icons/bs';
@@ -9,16 +9,16 @@ export  function SignUp() {
   const navigate = useNavigate();
   return (
     
-        <div className="logo">
+        <div className={Styles.logo}>
             {/* <img src="./TwitterImg.png" className="logo-box"/> */}
 
-            <span className='icons'><BsTwitter/></span>
-            <h2 className="heading">Join Twitter today</h2>
+            <span className={Styles.icons}><BsTwitter color='royalblue' size={40}/></span>
+            <h2 className={Styles.heading}>Join Twitter today</h2>
 
 
-           <button className='google-btn'><FcGoogle/>Sign in with Google</button>
+           <button className={Styles.google_btn}><FcGoogle/>Sign in with Google</button>
 
-           <button className='apple-btn'><BsApple/>Sign in with Apple</button>
+           <button className={Styles.apple_btn}><BsApple/>Sign in with Apple</button>
             
            
             <hr></hr>
@@ -26,7 +26,7 @@ export  function SignUp() {
             
             <Link onClick={navigate("/Createaccount")}>
            <div>
-            <button>Create account</button>
+            <button style={{listStyle:"none"}}>Create account</button>
             </div>
             </Link>
             

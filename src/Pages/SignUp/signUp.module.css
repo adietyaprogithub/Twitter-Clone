@@ -1,28 +1,17 @@
 
 .logo{
-
+    height: 85vh;
+    width: 20%;
     background-color: white;
     padding:30px 120px;
-    width:20%;
     position: absolute;
     top:50%;
     left:50%;
     transform:transLate(-50%, -50%);
     border-radius: 10px;
     text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-
-/* .icon{
-    margin: 30px;
-    color: royalblue;
-    font-size: 6rem;
-} */
-
-/* .logo-box{
-
-    width:30px;
-    margin-bottom: 20px;
-} */
 
 .google-btn{
     background-color: white;

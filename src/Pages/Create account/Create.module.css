@@ -1,4 +1,4 @@
-    /* main container style */
+
 
 .CreateAccount {
     height: 95vh;
@@ -12,8 +12,8 @@
     position: relative;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    overflow-y: scroll;
-    /* position: relative; */
+    /* overflow-y: scroll; */
+    position: relative;
 }
 
 /* h1 heading style */
@@ -63,6 +63,7 @@
     border-radius: 10px;
     color: black;
     font-size: 20px;
+    margin:10px;
 }
 
 /* date contet letters style */
@@ -90,8 +91,6 @@
     font-weight: 400;
     
 }
-
-
 
 .datemonth{
     height:75px;
@@ -135,15 +134,11 @@
     transition: .3s;
 }
 
-
-
 input[type=text]:focus {
 
     box-shadow: 0 0 8px 0 dodgerblue;
     transition: .3s;
 }
-
-
 
 .indate {
 
@@ -169,7 +164,7 @@ bottom: 20px;
 /* border: 2px solid red; */
 }
 .btn{
-    /* position: absolute; */
+    position: absolute;
     width: 70%;
     padding: 15px; 
     border-radius: 40px;
@@ -178,7 +173,7 @@ bottom: 20px;
     background: black;
     align-items: center;
     color:#fff;
-    bottom: 0; 
+    bottom: 15%; 
     margin-bottom: 15px;
     margin-top: 40px;
   
