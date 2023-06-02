@@ -1,7 +1,7 @@
-import "./Create.module.css";
 import React, { useState } from "react";
 import Styles from "./Create.module.css";
 import { HiX } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
 import { updateLoginStatus } from "./loginStatusSlice";
 
 export default function CreateAccount() {
@@ -15,6 +15,8 @@ export default function CreateAccount() {
   });
 
   const [errors, setErrors] = useState({});
+
+  const navigate = useNavigate();
 
   const newdata = localStorage.getItem("form")
     ? JSON.parse(localStorage.getItem("form"))
@@ -41,7 +43,9 @@ export default function CreateAccount() {
       errors.dob = "Date of Birth is required.";
     }
     if (!form.password.trim()) {
-      errors.dob = "Password is required ";
+      errors.password = "Password is required.";
+    } else if (form.password.length < 8) {
+      errors.password = "Password should be at least 8 characters long.";
     }
 
     return errors;
@@ -57,6 +61,7 @@ export default function CreateAccount() {
       console.log(form);
       setErrors({});
       window.alert("Data stored successfully!");
+      navigate("/login"); // Redirect to the login page after successful submission
     } else {
       setErrors(validationErrors);
     }
@@ -68,7 +73,7 @@ export default function CreateAccount() {
         <div className={Styles.HiX}>
           <HiX size={40} />
         </div>
-        <h1>Create Yourrr Account</h1>
+        <h1>Create Your Account</h1>
         <form onSubmit={handleSubmit}>
           <div className={Styles.inname}>
             <label>
@@ -83,22 +88,13 @@ export default function CreateAccount() {
               <input
                 className={Styles.input}
                 type="password"
-                placeholder="password"
+                placeholder="Password"
                 name="password"
                 value={form.password}
                 onChange={changeHandler}
               />
-              {/* <TextField
-                
-                id="outlined-basic"
-                label="name"
-                variant="outlined"
-                value={form.name}
-                required
-                size="larger"
-                onChange={changeHandler}
-              /> */}
               {errors.name}
+              {errors.password} {/* Display password errors */}
             </label>
           </div>
           <div className={Styles.inphone}>
@@ -112,7 +108,6 @@ export default function CreateAccount() {
                 onChange={changeHandler}
                 required
               />
-
               {errors.phone}
             </label>
           </div>
@@ -126,7 +121,6 @@ export default function CreateAccount() {
                 onChange={changeHandler}
                 className={Styles.input}
               />
-
               {errors.email}
             </label>
           </div>
@@ -148,18 +142,15 @@ export default function CreateAccount() {
                 onChange={changeHandler}
                 className={Styles.Date}
               />
-
               {errors.dob}
             </label>
           </div>
 
-          {/* <Link to ='signUP/'> */}
           <div className={Styles.btnbox}>
             <button className={Styles.btn} type="submit">
               Next
             </button>
           </div>
-          {/* </Link> */}
         </form>
       </div>
     </>
