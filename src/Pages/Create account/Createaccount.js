@@ -86,13 +86,7 @@ export default function CreateAccount() {
                 onChange={changeHandler}
                 required
               />
-       
-              {errors.name}
-            </label>
-            </div>
-            <div>
-            <label>
-            <input
+              <input
                 className={Styles.input}
                 type="password"
                 placeholder="Password"
