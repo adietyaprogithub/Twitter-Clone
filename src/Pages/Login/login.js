@@ -4,30 +4,32 @@ import { BsTwitter } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
+import { authAtom } from "../../atom";
 
 export function Login() {
   const [userName, setUsername] = React.useState("");
-  const [password, setPassword] = React.useState(""); // Add password state
+  const [password, setPassword] = React.useState("");
   const formData = JSON.parse(localStorage.getItem("form"));
-
+  const setAuth = useSetRecoilState(authAtom);
   const navigate = useNavigate();
 
   const handleClick = () => {
     const user = formData.find(
       (element) =>
-        (element.email === userName || element.phone === userName) &&
+        (element.email === userName ) &&
         element.password === password
     );
-  
+
     if (user) {
-      localStorage.setItem("login", true);
       localStorage.setItem("loggedInUser", JSON.stringify(user));
+      setAuth({ isAuthenticated: true });
       navigate("/home");
     } else {
       alert("Incorrect username or password");
     }
   };
-  
+
   return (
     <div className="login-container">
       <span className="icon">
@@ -53,7 +55,7 @@ export function Login() {
           setUsername(e.target.value);
         }}
         type="text"
-        placeholder=" Phone or email "
+        placeholder=" Enter Your email "
       />
 
       {/* Add password input field */}
