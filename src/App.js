@@ -24,7 +24,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/home" element={<MainHomePage />} />
           <Route exact path="/Createaccount" element={<CreateAccount />} />
           <Route path="/signUP" element={<SignUp />} />
           <Route path="/protected" element={<ProtectedRoute />} />
