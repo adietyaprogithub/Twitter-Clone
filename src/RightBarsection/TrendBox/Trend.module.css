@@ -1,24 +1,29 @@
     .Trendbox{
         background-color: rgb(255, 251, 251);
-        margin: 6%;
+      
         margin-top: -5%;
-        width: 90%;
-        
-        
+        width: 70%;
+        padding: 2rem;
+        margin-left: 2rem;
         border-radius: 1.2em;
         margin-bottom: 10px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        background: rgb(249, 244, 244);
+        position: relative;
+
     }
 
     h1{
         
-        width: fit-content;  
-        width: 95%;
-        text-align: start;
+        /* text-align: start; */
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* margin-top: -2rem; */
+        
     }
 
 
@@ -86,29 +91,27 @@
         border-radius: 2rem;
     }
     .showmore{
-        background-color: rgb(255, 251, 251);
         color:  black;
-        width: 100%;
         padding: 10px;
         cursor: pointer;
-        font-weight: 900;
         color: rgb(41, 169, 219);
         border: none;
         font-size: 20px;
-        /* position: relative; */
         right:100%;
+        border-radius: 30rem;
     
         
     }
     .showmore:hover{
-        background-color: rgb(184, 187, 189);    
+        background-color: lightgray;    
     }
     .btn{
         margin-top: 3px;
         margin-bottom: 2px;
-        font-weight: 600;
-        background-color:rgb(245, 241, 241);
-        border-radius: 10px;
+        /* font-weight: 600; */
+        /* background-color:rgb(245, 241, 241); */
+        border-radius: 50rem;
+        border: 2px solid red;
 
     }
     .btn:hover{

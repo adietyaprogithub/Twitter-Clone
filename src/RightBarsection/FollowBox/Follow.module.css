@@ -1,22 +1,26 @@
 .mainbox{
-    position: sticky;
     background-color: rgb(255, 251, 251);
-    height: 95%;
-    margin: 6%;
-    border: 1px solid;
-    margin-top: 1em;
-    border-radius: 1rem;
-    border: #f2f2f2;
-    width: 22vw;
-    border: 2px solid rgb(245, 245, 249);
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    margin-top: 5%;
+    width: 70%;
+    padding: 2rem;
+    margin-left: 2rem;
+    border-radius: 1.2em;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(249, 244, 244);
+    position: relative;
 }
 .contentmain{
+    text-align: center;
     display: flex;
     justify-content: space-between;
     padding-left: 1em;
     padding-right: 1em;
-    width: 86%;
+    /* padding: 0.5rem; */
+    width: 100%;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
     margin: 20px;
@@ -41,16 +45,19 @@
     font-weight: bolder;
  }
 .ShowMore{
-    color: rgb(24, 141, 187);
-    padding-left: 35%;
+    color:  black;
+    padding: 10px;
     cursor: pointer;
-    font-size: 1.3rem;
+    color: rgb(41, 169, 219);
+    border: none;
+    font-size: 20px;
+    right:100%;
+    border-radius: 30rem;
+    /* border: 2px solid red; */
     
 }
 .ShowMore:hover{
-    background-color:rgb(218 218 218 );
-    height: 7.8vh;
-    border-radius: 20px;
+    background-color: lightgray;  
     
 }
 
@@ -77,6 +84,12 @@
     width: fit-content;
     /* position: relative; */
     /* bottom: 18px; */
+}
+
+.followbtn{
+    margin-top: 1rem;
+  
+  
 }
 
 @media only screen and (min-width: 200px) and (max-width : 700px) {

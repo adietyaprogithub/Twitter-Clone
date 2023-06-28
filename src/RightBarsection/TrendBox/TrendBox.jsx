@@ -96,11 +96,11 @@ export default function Trendbox() {
   return (
     <>
       <div className={Styles.Trendbox}>
-        <h1
-          style={{ paddingLeft: "1rem", backgroundColor: "rgb(255, 251, 251)" }}
+        <h2
+          // style={{ paddingLeft: "1rem", backgroundColor: "rgb(255, 251, 251)" }}
         >
           What’s happening{" "}
-        </h1>
+        </h2>
         {/* <div className={Styles.imgcontainer}>
          <p>UEFA Europa League LIVE</p>
          <h6>Sevilla FC vs AS Roma</h6>

@@ -63,7 +63,7 @@ export default function FollowBox() {
   return (
     <>
       <div className={Styles.mainbox}>
-        <h5 style={{paddingLeft:"1rem",fontSize:"30px"}}>Who to follow </h5>
+        <h2>Who to follow </h2>
 
         {displayShows.map((element) => (
           <div className={Styles.contentmain}>
@@ -80,7 +80,7 @@ export default function FollowBox() {
               <p className={Styles.username}>{element.name}<VscVerifiedFilled className={Styles.vericon} size={20} color="royalblue"/></p>
               <p className={Styles.username2}>{element.userName}</p>
             </div>
-            <div style={{ paddingTop: "1em" }}>
+            <div className={Styles.followbtn}>
               <FollowButton />
             </div>
           </div>

@@ -16,9 +16,7 @@ export function Login() {
 
   const handleClick = () => {
     const user = formData.find(
-      (element) =>
-        (element.email === userName ) &&
-        element.password === password
+      (element) => element.email === userName && element.password === password
     );
 
     if (user) {
@@ -32,26 +30,30 @@ export function Login() {
 
   return (
     <div className={Styles.login_container}>
-      <span className={Styles.icon}>
-        <BsTwitter />
-      </span>
+     <div className={Styles.content_container}>
+      {/*  */}
+          <BsTwitter className={Styles.icon} />
+          <h1 className={Styles.header}>Sign in to Twitter</h1>
+          {/*  */}
+       
+        </div >
+        
 
-      <h1 className={Styles.header}>Sign in to Twitter</h1>
+        <button className={Styles.google_btn}>
+          <FcGoogle />
+          Sign in with Google
+        </button>
 
-      <button className={Styles.google_btn}>
-        <FcGoogle />
-        Sign in with Google
-      </button>
-
-      <button className={Styles.apple_btn}>
-        <BsApple />
-        Sign in with Apple
-      </button>
+        <button className={Styles.apple_btn}>
+          <BsApple />
+          Sign in with Apple
+        </button>
+   
 
       <h3>or</h3>
 
       <input
-      className={Styles.input}
+        className={Styles.input}
         onChange={(e) => {
           setUsername(e.target.value);
         }}
@@ -61,19 +63,20 @@ export function Login() {
 
       {/* Add password input field */}
       <input
+        className={Styles.input}
         onChange={(e) => {
           setPassword(e.target.value);
         }}
         type="password"
         placeholder="Password"
       />
-   <div>
-      <button className={Styles.next_btn} onClick={handleClick}>
-        Next
-      </button>
+      <div>
+        <button className={Styles.next_btn} onClick={handleClick}>
+          Next
+        </button>
       </div>
       <div>
-      <button className={Styles.forgot_btn}>Forgot password?</button>
+        <button className={Styles.forgot_btn}>Forgot password?</button>
       </div>
       <p>
         Don't have an account? <Link to="/signUP">Sign up</Link>

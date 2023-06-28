@@ -8,7 +8,7 @@ export function MainHomePage(){
     return(
         <div className='Main-div'>
              <Sidebar/>
-            <Home/>
+             <Home/>
             <Column3/>
            
         </div>

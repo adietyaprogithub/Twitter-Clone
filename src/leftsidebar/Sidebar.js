@@ -10,9 +10,9 @@ import {
     FaRegBookmark,
     FaClipboardList,
     FaUserAlt,
-    FaMehBlank
-} from 'react-icons/fa'
 
+} from 'react-icons/fa'
+import {CiCircleMore} from 'react-icons/ci'
 
 const Sidebar = () => {
 
@@ -21,7 +21,7 @@ const Sidebar = () => {
 
             <ul  style={{listStyleType:'none'}}>
                 <div className={styles.logo1}>
-                    <a href='' id={styles.bar}><FaTwitter className={styles.icons }  id={styles.logo}/></a>
+                    <a href='' id={styles.bar}><FaTwitter className={styles.twitter_icon }  id={styles.logo}/></a>
                 </div>
                 <li>
                     <a href=''><FaHome className={styles.icons}  /><span className={styles.navlink}>Home</span></a>
@@ -45,7 +45,7 @@ const Sidebar = () => {
                     <a href=''>< FaUserAlt className={styles.icons} /><span className={styles.navlink}>Profile</span></a>
                 </li>
                 <li>
-                    <a href=''>< FaMehBlank className={styles.icons} /><span className={styles.navlink}>More</span></a>
+                    <a href=''>< CiCircleMore className={styles.icons} /><span className={styles.navlink}>More</span></a>
                 </li>
                 <div className={styles.sidebar_Btn}>
                 <a href='' id={styles.sbtn}>Tweet</a>

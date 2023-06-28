@@ -108,16 +108,38 @@
     color: black;
   }
   .main{
+    display: flex;
     height: fit-content;
+    width: 15rem;
     position: relative;
     bottom: 200px;
+    /* border: 2px solid red; */
+    margin-top:80%;
+    background-color: lightgray;
+    border-radius: 20px;
+  }
+  .log_out_btn{
+    margin-top: 40%;
+    background-color: #88caf9;
+    color: #fff;
+    border: none;
+    width: 95px;
+    border-radius: 20px;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s;
+    margin-left: -100%;
+  }
+  .log_out_btn:hover{
+    background-color: #5ca0d1;
   }
   .userDetail {
     margin-left: 15px;
     margin-right: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: medium;
-  
-    
+    font-size: medium; 
   }

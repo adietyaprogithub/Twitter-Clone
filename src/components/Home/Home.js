@@ -61,7 +61,7 @@ function Home() {
   };
 
   return (       
-    <div className="home">                                  //input field
+    <div className="home">                           
       <div>
         <div className="header">
           <div className="row-between1">

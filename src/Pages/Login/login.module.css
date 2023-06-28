@@ -1,121 +1,80 @@
+.login_container {
+  height: 85vh;
+  width: 35%;
+  padding: 15px;
+  margin: 0 auto;
+  margin-top: 2%;
+  background-color: #fff;
+  border-radius: 20px;
+  text-align: center;
+  justify-content: center;
+  /* border: 2px solid red; */
 
-.login_container{
-    height: 85vh;
-    width: 35%;
-    padding:15px;
-    margin: 0 auto;
-    margin-top: 2%;
-    background-color: #fff;
-    border-radius: 20px;
-    text-align: center;
-    /* border: 2px solid red; */
-    align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.content_container {
+  /* border: 2px solid red; */
+  text-align: center;
 }
 .icon{
-    margin: 30px;
     color: royalblue;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    
 }
 
 .header{
-    margin-left: 20%;
+    margin-left: 40%;
+    margin-top: 7%;
+    
 }
-.google_btn{
-    background-color: white;
-    border: 2px solid lightgray;
-    width: 20em;
-    padding: 10px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    font-size: 1rem;
+.google_btn {
+  background-color: white;
+  border: 2px solid lightgray;
+  width: 20em;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  margin-top: 20%;
+  cursor: pointer;
+  font-size: 1rem;
 }
-.apple_btn{
-    background-color: white;
-    border: 2px solid lightgray;
-    width: 20em;
-    padding: 10px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-bottom: 15px;
-    font-size: 1rem;
-}
-
-
-.next_btn{
-    background-color: black;
-   color: white;
-    width: 20em;
-    padding: 10px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-bottom: 15px;
-}
-.forgot_btn{
-    background-color: white;
-    border: 2px solid lightgray;
-    width: 20em;
-    padding: 10px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-bottom: 15px;
+.apple_btn {
+  background-color: white;
+  border: 2px solid lightgray;
+  width: 20em;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  /* margin-bottom: 15px; */
+  font-size: 1rem;
 }
 
-    .icon{
-        margin: 30px;
-        color: royalblue;
-        font-size: 3rem;
-    }
-    .input{
-        background-color: white;
-        border: 2px solid lightgray;
-        width: 20em;
-        padding: 18px;
-        margin-top: 10px;
-        margin-bottom: 20px;
-        font-size: 1rem;
-    }
-
-    /* .next_btn{
-        background-color: black;
-       color: white;
-        width: 20em;
-        padding: 10px;
-        border-radius: 20px;
-        cursor: pointer;
-        margin-bottom: 15px;
-    }
-    .forgot_btn{
-        background-color: white;
-        border: 2px solid lightgray;
-        width: 20em;
-        padding: 10px;
-        border-radius: 20px;
-        cursor: pointer;
-        margin-bottom: 15px;
-    } */
-    a{
-        color: blue;
-    }
-
-    /* @media screen and (max-width:1249px) {
-        .google-btn{
-            background-color: white;
-            border: 2px solid lightgray;
-            width: 20em;
-            padding: 10px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        .apple-btn{
-            background-color: white;
-            border: 2px solid lightgray;
-            width: 20em;
-            padding: 10px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-    } */
+.next_btn {
+  background-color: black;
+  color: white;
+  width: 20em;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.forgot_btn {
+  background-color: white;
+  border: 2px solid lightgray;
+  width: 20em;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.input {
+  background-color: white;
+  border: 2px solid lightgray;
+  width: 20em;
+  padding: 18px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
